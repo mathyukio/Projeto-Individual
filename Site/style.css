@@ -6,8 +6,7 @@ body {
 }
 
 .header {
-  border-bottom: 3px solid black;
-  height: 100px;
+  height: 140px;
   display: flex;
   align-items: center;
 }
@@ -19,26 +18,31 @@ body {
   justify-content: space-around;
 }
 
-
 .navbar {
   display: flex;
   flex-direction: row;
-  list-style: none;
+  list-style-type: none;
   width: 300px;
   justify-content: space-between;
   color: black;
   align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  gap: 4rem;
+  margin-bottom: 5%;
+  margin-right: 17%;
 }
 
 .header .container {
   justify-content: space-between;
 }
 
-.header img {
-  width: 100px;
-  display: flex;
-  margin-bottom: 45px;
-  
+.header .container img {
+  width: 120px;
+  position: relative;
+  right: 70px;
+  bottom: 10px;
+
 }
 
 /* BANNER */
@@ -46,9 +50,11 @@ body {
   padding: 40px 20px 30px 10px;
   color: white;
   height: 400px;
-  background-image: url(bg-jelly-fish-para_outras_pags.png);
-
+  background-image: url(Fotos/a12d5b31-6dba-4b03-a2ad-0e6004971d12.jpg);
+  background-size: 100%;
 }
+
+
 
 /* CTL espaço */
 .banner .container {
@@ -58,8 +64,12 @@ body {
 }
 
 .banner .container p {
-  font-size: 36px;
-  width: 25%;
+  font-size: 25px;
+  width: 20%;
+  color: whitesmoke;
+  position: relative;
+  left: 39%;
+
 }
 
 .banner.container p span {
@@ -89,7 +99,7 @@ body {
 
 .footer {
   height: 100px;
-  background-color: #32c9cd;
+  background-color: white;
 }
 
 .footer .container {
@@ -101,7 +111,7 @@ body {
 .login .container {
   justify-content: center;
   align-items: center;
-  background-image: url(bg-jelly-fish-para_outras_pags.png);
+  background-image: url();
   background-size: cover;
   height: 75vh;
 }
@@ -129,11 +139,11 @@ body {
 .campo input {
   width: 200px;
   padding: 7px 15px;
-  border: 2px  solid #32c9cd;
+  border: 2px solid #32c9cd;
   border-radius: 10px;
 }
 
-.formulario{
+.formulario {
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -154,7 +164,7 @@ body {
   color: black;
 }
 
-.agora{
+.agora {
   font-weight: 20px;
   text-decoration: none;
 }
