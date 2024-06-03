@@ -1,0 +1,39 @@
+button {
+    cursor: pointer;
+}
+
+ .quiz-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2em;
+    margin-top: 3%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  }
+
+  .quiz-container p {
+    font-size: 21px;
+  }
+
+  .choices {
+    display: flex;
+  }
+
+  .choice {
+    font-size: 1em;
+    display: block;
+    margin: 5px 5px;
+    padding: .5em .75em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .choice:hover {
+    background-color: #2980b9;
+  }
