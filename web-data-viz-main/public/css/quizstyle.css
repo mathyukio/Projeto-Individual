@@ -3,19 +3,20 @@ button {
 }
 
  .quiz-container {
+    
     box-sizing: border-box;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 2em;
     margin-top: 3%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 238, 238);
     border-radius: 20px;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   }
 
   .quiz-container p {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .choices {

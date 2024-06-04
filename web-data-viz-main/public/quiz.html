@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ThaiClub | Quiz</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quizstyle.css">
+
+  <link rel="icon" href="./assets/icon/favicon2.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo"><img src="assets/imgs/Fotos/Logo1.png" alt=""></h1>
+      <ul class="navbar">
+        <li class="agora">
+          <a href="index.html">Inicio</a>
+        </li>
+        <li class="agora">
+          <a href="sobremim.html">Sobre Mim</a>
+        </li>
+        <li class="agora">
+          <a href="blog.html">Blog</a>
+        </li>
+        <li>|</li>
+        <li class="agora">
+          <a href="login.html">Login</a>
+        </li>
+        <li class="agora">
+          <a href="cadastro.html">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quiz-container">
+    <h1> Muay Thai Quiz - Teste seus conhecimentos!</h1>
+    <div class="question">
+      <p id="question-text">Question 1: What is the capital of United Kingdom?</p>
+      <div class="choices">
+        <button class="choice" onclick="checkAnswer(0)">Escolha 1</button>
+        <button class="choice" onclick="checkAnswer(1)">Escolha 2</button>
+        <button class="choice" onclick="checkAnswer(2)">Escolha 3</button>
+        <button class="choice" onclick="checkAnswer(3)">Escolha 4</button>
+
+      </div>
+      <p id="feedback"></p>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+const questions = [
+  {
+    question: "Qual o país de origem do Muay Thai?",
+    choices: ["Japão", "China", "Tailândia", "Coreia do Sul"],
+    correct: 2
+  },
+  {
+    question: "Qual o principal golpe de punho usado no Muay Thai?",
+    choices: ["Jab", "Upper", "Cruzado", "Hook"],
+    correct: 0
+  },
+  {
+    question: "Quantos pontos de contato podem ser utilizados em uma luta?",
+    choices: ["8", "6", "4", "Nenhuma das alternativas"],
+    correct: 0
+  },
+  {
+    question: "Quais são os equipamentos de proteção mais comuns usados em uma luta de Muay Thai?",
+    choices: ["Luvas e capacete", "Caneleiras e capacete", "Luvas e protetor bucal", "Luvas e caneleiras"],
+    correct: 3
+  },
+  {
+    question: "Qual o principal objetivo de um atleta em uma luta?",
+    choices: ["Demonstrar técnica", "Nocautear o oponente", "Defender-se", "Pontuar mais que o oponente"],
+    correct: 1
+  },
+  {
+    question: "Qual o fundamento mais importante do Muay Thai?",
+    choices: ["Força nos golpes", "Base de apoio firme", "Agilidade e velocidade", "Técnica de combate"],
+    correct: 1
+  },
+  {
+    question: "Qual a principal função do clinch no Muay Thai?",
+    choices: ["Cansar o adversário", "Se defender e ganhar tempo", "Encurtar a distância com o adversário", "Controle de movimento e aplicar golpes curtos"],
+    correct: 3
+  },
+  {
+    question: "Qual é a área de pontuação mais alta em uma luta de Muay Thai?",
+    choices: ["Cabeça", "Tronco", "Pernas", "Braços"],
+    correct: 0
+  },
+  {
+    question: "Em que posição do corpo os lutadores geralmente seguram o clinch?",
+    choices: ["Na altura dos quadris", "Na altura dos ombros", "Na altura do pescoço", "Na altura das pernas"],
+    correct: 2
+  },
+  {
+    question: "Qual é a técnica de chute frontal no Muay Thai chamada?",
+    choices: ["Chute circular", " Hook kick", "Teep", "Chute giratório"],
+    correct: 2
+  },
+];
+
+var currentQuestion = 0;
+var correctAnswers = 0;
+
+function showQuestion() {
+  const questionText = document.getElementById("question-text");
+  questionText.textContent = questions[currentQuestion].question;
+
+  const choices = document.querySelectorAll(".choice");
+  choices.forEach((choice, index) => {
+    choice.textContent = questions[currentQuestion].choices[index];
+  });
+
+  const feedback = document.getElementById("feedback");
+  feedback.textContent = "";
+}
+
+function checkAnswer(selected) {
+  const feedback = document.getElementById("feedback");
+  if (selected === questions[currentQuestion].correct) {
+    feedback.innerHTML = " <span style= 'color: green;font-weight: bold;'>ALTERNATIVA CORRETA!</span>";
+    correctAnswers++;
+  } else {
+    feedback.innerHTML = "<span style= 'color: red;font-weight: bold;'>ALTERNATIVA ERRADA!</span>";
+  }
+
+  setTimeout(() => {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      const quizContainer = document.querySelector(".quiz-container");
+      quizContainer.innerHTML = `<p>Você acertou ${correctAnswers} de ${questions.length} perguntas.</p>`;
+    }
+  }, 1000);
+}
+
+function embaralharQuestion() {
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  embaralharQuestion();
+  showQuestion();
+
+});
+
+
+</script>
