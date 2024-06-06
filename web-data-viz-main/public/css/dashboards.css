@@ -348,8 +348,11 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  background-color: #000000;
+}
+
+.header-left img{
+  padding-top: 10px;
 }
 
 .dash-right {
@@ -375,36 +378,54 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #ffffff;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 25px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 .hello h3 span {
   font-weight: 800;
+  font-size: 25px;
 }
 
 .btn-nav {
   width: 40%;
+  height: 30px;
   color: white;
-  background-color: #e6005a;
+  background-color: rgb(239, 65, 65);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.btn-nav:hover {
+  background-color: rgb(255, 0, 0);
+  transition: 0.3s;
 }
 
 .btn-nav-white {
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+  height: 30px;
+  background-color: rgb(239, 65, 65);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.btn-nav-white:hover {
+  background-color: rgb(255, 0, 0);
+  transition: 0.3s;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
+  color: #ffffff;
+  padding-top: 1.7px;
   margin: 0;
 }
 
@@ -412,17 +433,66 @@ canvas {
 .btn-logout h3 {
   margin: 0;
   padding: 0;
+  padding-top: 2px;
 }
 
 .btn-logout {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #178ea0;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
-  margin-bottom: 100px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   cursor: pointer;
+}
+.btn-logout:hover {
+  background-color: #03031c;
+  transition: 0.3s;
+}
+
+.headerdash {
+  text-align: center;
+  font-size: 21px;
+  padding-left: 18%;
+}
+
+.jorge {
+  border: 2px solid black;
+}
+
+.pedrao {
+  background-image: url(fts/wade-austin-ellis-1jaXXVuPRDc-unsplash.jpg);
+  background-size: cover;
+}
+
+.sectionStats {
+  display: flex;
+  justify-content: center; /* centraliza o conteúdo horizontalmente */
+  margin-left: 15%;
+}
+
+.estatisticasT {
+  text-align: center;
+  width: 170px;
+  background-color: #dfe0e0;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  height: 100px;
+  margin-right: 11%;
+  margin-top: 5%;
+}
+
+ .estatisticasM {
+  text-align: center;
+  width: 170px;
+  background-color: #dfe0e0;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  height: 100px;
+  margin-left: 11%;
+  margin-top: 5%;
 }

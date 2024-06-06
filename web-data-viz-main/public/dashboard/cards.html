@@ -6,93 +6,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThaiClub | Dashboards</title>
 
+    <title>ThaiClub | Dashboards</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="./../css/quizstyle.css">
 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
 
-    <div class="janela">
-
         <div class="header-left dash-header">
-
-            <h1>ThaiClub</h1>
-
+            <img src="pictures/Logo1.png" alt="" width="120px" height="120px">
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Bem Vindo, <span id="b_usuario">usuário</span>!</h3>
             </div>
-
             <div class="btn-nav">
+              <a href="cards.html ">
                 <h3>Quiz</h3>
+              </a>
             </div>
-
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
                     <h3>Gráficos</h3>
                 </a>
             </div>
-
             <div class="btn-nav-white">
                 <a href="./mural.html">
                     <h3>Posts</h3>
                 </a>
             </div>
-
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
+     </div>
 
-        </div>
-
-        <!-- <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="cards" id="cardAquarios">
-
-            </div>
-
-        </div>
-
+     
+     <div class="headerdash">
+      <h1>Fórum ThaiClub</h1>
+     </div>
+     <hr class="jorge">
+     <div class="sectionStats">
+      <div class="estatisticasT">
+        <h3>Total de Tentativas</h3>
+      </div>
+      <div class="estatisticasM">
+        <h3>Maior Pontuação</h3>
+      </div>
     </div>
-
+        <div class="quiz-container">
+            <h1> Muay Thai Quiz - Teste seus conhecimentos!</h1>
+            <div class="question">
+              <p id="question-text">Question 1: What is the capital of United Kingdom?</p>
+              <div class="choices">
+                <button class="choice" onclick="checkAnswer(0)">Escolha 1</button>
+                <button class="choice" onclick="checkAnswer(1)">Escolha 2</button>
+                <button class="choice" onclick="checkAnswer(2)">Escolha 3</button>
+                <button class="choice" onclick="checkAnswer(3)">Escolha 4</button>
+        
+              </div>
+              <p id="feedback"></p>
+            </div>
+          </div>
+      
 </body>
 
 <script>
@@ -114,6 +99,110 @@
                     `
         });
     }
+
+    const questions = [
+  {
+    question: "Qual o país de origem do Muay Thai?",
+    choices: ["Japão", "China", "Tailândia", "Coreia do Sul"],
+    correct: 2
+  },
+  {
+    question: "Qual o principal golpe de punho usado no Muay Thai?",
+    choices: ["Jab", "Upper", "Cruzado", "Hook"],
+    correct: 0
+  },
+  {
+    question: "Quantos pontos de contato podem ser utilizados em uma luta?",
+    choices: ["8", "6", "4", "Nenhuma das alternativas"],
+    correct: 0
+  },
+  {
+    question: "Quais são os equipamentos de proteção mais comuns usados em uma luta de Muay Thai?",
+    choices: ["Luvas e capacete", "Caneleiras e capacete", "Luvas e protetor bucal", "Luvas e caneleiras"],
+    correct: 3
+  },
+  {
+    question: "Qual o principal objetivo de um atleta em uma luta?",
+    choices: ["Demonstrar técnica", "Nocautear o oponente", "Defender-se", "Pontuar mais que o oponente"],
+    correct: 1
+  },
+  {
+    question: "Qual o fundamento mais importante do Muay Thai?",
+    choices: ["Força nos golpes", "Base de apoio firme", "Agilidade e velocidade", "Técnica de combate"],
+    correct: 1
+  },
+  {
+    question: "Qual a principal função do clinch no Muay Thai?",
+    choices: ["Cansar o adversário", "Se defender e ganhar tempo", "Encurtar a distância com o adversário", "Controle de movimento e aplicar golpes curtos"],
+    correct: 3
+  },
+  {
+    question: "Qual é a área de pontuação mais alta em uma luta de Muay Thai?",
+    choices: ["Cabeça", "Tronco", "Pernas", "Braços"],
+    correct: 0
+  },
+  {
+    question: "Em que posição do corpo os lutadores geralmente seguram o clinch?",
+    choices: ["Na altura dos quadris", "Na altura dos ombros", "Na altura do pescoço", "Na altura das pernas"],
+    correct: 2
+  },
+  {
+    question: "Qual é a técnica de chute frontal no Muay Thai chamada?",
+    choices: ["Chute circular", " Hook kick", "Teep", "Chute giratório"],
+    correct: 2
+  },
+];
+
+var currentQuestion = 0;
+var correctAnswers = 0;
+
+function showQuestion() {
+  const questionText = document.getElementById("question-text");
+  questionText.textContent = questions[currentQuestion].question;
+
+  const choices = document.querySelectorAll(".choice");
+  choices.forEach((choice, index) => {
+    choice.textContent = questions[currentQuestion].choices[index];
+  });
+
+  const feedback = document.getElementById("feedback");
+  feedback.textContent = "";
+}
+
+function checkAnswer(selected) {
+  const feedback = document.getElementById("feedback");
+  if (selected === questions[currentQuestion].correct) {
+    feedback.innerHTML = " <span style= 'color: green;font-weight: bold;'>ALTERNATIVA CORRETA!</span>";
+    correctAnswers++;
+  } else {
+    feedback.innerHTML = "<span style= 'color: red;font-weight: bold;'>ALTERNATIVA ERRADA!</span>";
+  }
+
+  setTimeout(() => {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      const quizContainer = document.querySelector(".quiz-container");
+      quizContainer.innerHTML = `<p>Você acertou ${correctAnswers} de ${questions.length} perguntas.</p>`;
+    }
+  }, 1000);
+}
+
+function embaralharQuestion() {
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  embaralharQuestion();
+  showQuestion();
+
+});
 
 </script>
 

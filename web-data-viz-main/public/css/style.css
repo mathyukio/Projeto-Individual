@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #fff
+  background-color: rgb(255, 255, 255)
 }
 
 .header {
@@ -105,8 +105,15 @@ body {
 }
 
 .agora {
-  font-weight: 20px;
+  font-weight: bold;
   text-decoration: none;
+}
+
+.agora:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: scale(105%, 105%);
+  transition: transform 0.1s, background-color 0.2s;
 }
 
 .hr {
@@ -115,7 +122,7 @@ body {
   width: 90%;
 }
 
-.sectionHistoria h1{
+.sectionHistoria h1 {
   text-align: center;
   font-size: 47px;
   color: #03031c;
@@ -130,7 +137,7 @@ body {
 }
 
 .tituloTailandia img {
-  margin-left: 22px; 
+  margin-left: 22px;
   margin-top: 4.3%;
   border-radius: 2px;
   border: 1.4px solid black;
@@ -158,11 +165,12 @@ body {
   color: #1c1c1c;
 }
 
-.sectionHistoria .container img{
+.sectionHistoria .container img {
   margin-left: auto;
   margin-right: 13px;
   margin-top: 20px;
   border-radius: 3px;
+  border: 1px solid black;
 }
 
 .sectionHistoriaDireita .container {
@@ -182,10 +190,11 @@ body {
   color: #1c1c1c;
 }
 
-.sectionHistoriaDireita .container img{
+.sectionHistoriaDireita .container img {
   margin-right: auto;
   margin-bottom: 15px;
   border-radius: 3px;
+  border: 1px solid black;
 }
 
 .sectionHistoriaUltimo .container {
@@ -205,6 +214,14 @@ body {
   color: #1c1c1c;
 }
 
+.sectionHistoriaUltimo .container img {
+  margin-left: auto;
+  margin-right: 13px;
+  margin-top: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
 .sectionImportancia .container {
   display: flex;
   justify-content: space-evenly;
@@ -214,6 +231,29 @@ body {
   color: #000000;
 }
 
+.gradiente {
+  background: linear-gradient(to bottom, white, rgb(223, 223, 233));
+}
+
+.gradiente2 {
+  background: linear-gradient(to bottom, rgb(232, 232, 244), white);
+}
+
+.tituloImportancia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tituloImportancia img {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  transform: scaleX(-1);
+}
+
+.tituloImportancia img:hover {
+  cursor: pointer;
+}
 
 .sectionImportancia h1 {
   text-align: center;
@@ -223,7 +263,7 @@ body {
 
 .sectionImportancia .container p {
   text-align: left;
-  font-size: 19px;
+  font-size: 21px;
   width: 50%;
   padding-right: 10%;
   line-height: 1.5em;
@@ -231,39 +271,134 @@ body {
 }
 
 .sectionImportancia .container img {
-  border-radius: 10px;
+  border-radius: 4px;
   border: 1px black solid;
   /* margin-bottom: 13%; */
 }
 
 .sectionImportancia .container img:hover {
-  transform: scale(1.4);
+  transform: scale(1.3);
   transition: 0.6s;
 }
 
-/* .sectionIniciante .container {
+.tituloAcademia {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  height: 100%;
-  padding-top: 1%;
+  justify-content: center;
+}
+
+.tituloAcademia img {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.tituloAcademia img:hover {
+  cursor: pointer;
+}
+
+.sectionAcademia .container p {
+  all: unset;
+  font-size: 21px;
+  text-align: justify;
+  color: #1c1c1c;
+  line-height: 1.5em;
+}
+
+
+.sectionAcademia .containerAcad {
+  display: flex;
+  /* width: 450px; */
+  height: auto;
+  justify-content: left;
+  padding-top: 1.7%;
+  padding-left: 6.5%;
   color: #000000;
 }
 
-.sectionIniciante h1 {
-  text-align: center;
-  font-size: 41px;
+.sectionAcademia .containerAcad h2 {
+  color: #03031c;
+  text-align: left;
+  padding-left: 3.5%;
+  /* padding-top: 4%; */
+  font-size: 27px;
 }
 
-.sectionIniciante .container p {
-  text-align: center;
-  font-size: 19px;
-  width: 50%;
-  padding-right: 10%;
-  line-height: 1.5em;
-  color: #1c1c1c;
+.sectionAcademia .containerAcad .joaodebarro {
+  width: 400px;
+  padding-left: 19%;
+  text-decoration: underline;
+}
+
+.sectionAcademia .listaacad .pao {
+  width: 350px;
+  text-align: justify;
+  padding-left: 20%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sectionAcademia .listaacad .butao {
+  position: relative;
+  right: 7%;
+  margin-top: 11%;
+  /* margin-right: 9%; */
+  height: 35px;
+  width: 110px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #03031c;
+  border: none;
+}
+
+.sectionAcademia .listaacad .butao a{
+  text-decoration: none;
+  color: white;
+}
+
+.sectionAcademia .listaacad button:hover {
+  background-color: rgb(246, 43, 43);
+  cursor: pointer;
+  transform: scale(105%, 105%);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+
+.listaacad {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 10%;
+  padding-top: 1%;
+  /* width: 390px;
+  height: 230px; */
+}
+
+.listaacad ul {
+  list-style-type: square;
+  font-size: 21px;
+  color: #03031c;
+  margin-top: 0;
+  padding-right: 20px;
+}
+
+.listaacad ul li {
+  margin-bottom: 15px;
+  /* Adiciona espaçamento entre os itens da lista */
+}
+
+/* .verticalimg {
+  width: 420px;
+  height: 610px;
 } */
 
+/* .verticalimg img{
+  display: flex;
+  border-radius: 5px;
+  width: 410px;
+  height: 600px;
+} */
+
+/* LOGIN E CADASTRO */
 
 .login .container {
   justify-content: center;
@@ -456,11 +591,11 @@ body {
 }
 
 .menorparagrafo img {
- position: relative;
- left: 7%;
- border: 1px solid black;
- border-radius: 10px;
- 
+  position: relative;
+  left: 7%;
+  border: 1px solid black;
+  border-radius: 10px;
+
 }
 
 .menorparagrafo img:hover {
@@ -508,13 +643,12 @@ body {
   margin-top: 2%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
-
