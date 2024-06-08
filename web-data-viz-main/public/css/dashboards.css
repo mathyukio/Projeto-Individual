@@ -15,14 +15,16 @@ body {
 
 .dash-right .avisos {
   width: 100%;
-  color: rgb(216, 216, 216);
+  color: rgb(0, 0, 0);
+  background-color: white;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
 .dash-right .avisos .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .dash-right .avisos .container .div-form {
@@ -35,18 +37,25 @@ body {
 
 .dash-right .avisos .div-form label {
   width: 95%;
+  font-weight: bold;
+  padding-left: 8px;
+}
+
+.dash-right .avisos .div-form label:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .dash-right .avisos .div-form input {
   width: 95%;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .dash-right .avisos .div-form textarea {
-  width: 95%;
-  border: 3px solid #e6005a;
+  width: 97.5%;
+  border: 3px solid #000000;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 .dash-right .avisos .div-form button {
@@ -58,8 +67,14 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #1c1c1c;
   width: 120px;
+}
+
+.dash-right .avisos .div-form button:hover {
+  background-color:rgb(255, 0, 0);
+  transform: scale(105%, 105%);
+  transition: 0,5s;
 }
 
 .publicacao-btn-editar {
@@ -355,6 +370,7 @@ canvas {
   padding-top: 10px;
 }
 
+  
 .dash-right {
   display: flex;
   width: 70%;
@@ -457,11 +473,16 @@ canvas {
 .headerdash {
   text-align: center;
   font-size: 21px;
+  letter-spacing: 15px;
+
   padding-left: 18%;
 }
 
-.jorge {
-  border: 2px solid black;
+.jorge{
+  position: relative;
+  bottom: 19px;
+  width: 270px;
+  border: 2px solid;
 }
 
 .pedrao {
@@ -472,7 +493,7 @@ canvas {
 .sectionStats {
   display: flex;
   justify-content: center; /* centraliza o conteúdo horizontalmente */
-  margin-left: 15%;
+  margin-left: 20%;
 }
 
 .estatisticasT {
@@ -483,7 +504,7 @@ canvas {
   border-radius: 10px;
   height: 100px;
   margin-right: 11%;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
  .estatisticasM {
@@ -494,5 +515,5 @@ canvas {
   border-radius: 10px;
   height: 100px;
   margin-left: 11%;
-  margin-top: 5%;
+  margin-top: 3%;
 }

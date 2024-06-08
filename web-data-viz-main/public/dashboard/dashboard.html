@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaTech | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
@@ -37,7 +37,7 @@
         </div>
         <div class="btn-nav">
             <a href="cards.html">
-            <h3>Quiz</h3>
+                <h3>Quiz</h3>
             </a>
         </div>
         <div class="btn-nav-white">
@@ -53,19 +53,24 @@
         <div class="btn-logout" onclick="limparSessao()">
             <h3>Sair</h3>
         </div>
- </div>
+    </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
+    <div class="headerdash">
+        <h1>Fórum ThaiClub</h1>
+        <hr class="jorge">
+    </div>
 
-            <div class="btns-dash" id="btnAquario">
-                
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div id="graficos">
-            </div>
+    <div class="dash">
+        <div id="alerta">
         </div>
+
+        <div class="btns-dash" id="btnAquario">
+
+            <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+        </div>
+        <div id="graficos">
+        </div>
+    </div>
     </div>
 
 
@@ -74,6 +79,7 @@
 </html>
 
 <script>
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;

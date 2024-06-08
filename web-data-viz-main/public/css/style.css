@@ -634,10 +634,10 @@ body {
   display: none;
   background-color: #fff;
   color: black;
-  width: 230px;
+  width: 200px;
   position: absolute;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
+  border-radius: 6px;
+  border: #000000 3px solid;
   padding: 10px;
   margin-right: 5%;
   margin-top: 2%;
@@ -646,6 +646,12 @@ body {
 .card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
+}
+
+#div_erros_login {
+  display: none;
+  color: white;
+  padding-bottom: 1%;
 }
 
 .alerta_erro {
