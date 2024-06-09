@@ -1,0 +1,292 @@
+.fotoBlog {
+    height: 250px;
+    margin-bottom: 50px;
+    background-image: url(fts/jonathan-tomas-xOtJxM76zO0-unspl.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* .welcome {
+
+} */
+
+.welcome h1 {
+    text-align: center;
+    margin-bottom: 4%;
+    color: #03001c;
+    font-size: 47px;
+}
+.welcome h1:hover {
+    text-decoration: underline;
+}
+
+.welcome p {
+    font-size: 21px;
+    text-align: justify;
+    color: #1c1c1c;
+    line-height: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.equipamentos h1 {
+    text-align: left;
+    margin-bottom: 3%;
+    color: #03001c;
+    font-size: 30px;
+    padding-top: 3%;
+    padding-left: 10%;
+}
+
+.equipamentos p {
+    font-size: 21px;
+    text-align: justify;
+    color: #1c1c1c;
+    line-height: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.equipamentos ul {
+    padding-left: 13%;
+    padding-top: 1%;
+}
+
+.equipamentos a {
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: bold;
+}
+
+.equipamentos a:hover {
+    text-decoration: underline;
+}
+
+.equipamentosJ h1 {
+    text-align: left;
+    margin-bottom: 3%;
+    color: #03001c;
+    font-size: 30px;
+    padding-top: 3%;
+    padding-left: 10%;
+}
+
+.equipamentosJ p {
+    font-size: 21px;
+    text-align: justify;
+    color: #1c1c1c;
+    line-height: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.equipamentosJ ul {
+    padding-left: 13%;
+    padding-top: 1%;
+}
+
+.equipamentosJ a {
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: bold;
+}
+
+.equipamentosJ a:hover {
+    text-decoration: underline;
+}
+
+#contato {
+    margin-top: 5%;
+}
+
+#best {
+    font-size: 31px;
+    text-align: left;
+    padding-left: 10%;
+    padding-top: 3%;
+}
+
+#nak {
+    width: 45%;
+    padding-right: 0;
+}
+
+.aria {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.aria img {
+    margin-left: 5%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.luvas h1{
+    text-align: left;
+    margin-bottom: 3%;
+    color: #03001c;
+    font-size: 31px;
+    padding-top: 3%;
+    padding-left: 10%;
+}
+
+.luvas p {
+    font-size: 21px;
+    text-align: justify;
+    color: #1c1c1c;
+    line-height: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.luvas ul {
+    padding-left: 13%;
+    padding-top: 1%;
+    font-size: 18px;
+    line-height: 35px;
+    color: black;
+}
+
+#nl {
+    font-weight: bold;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+#nl:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#everlastP {
+    color: #d50808;
+    font-size: 22px;
+    padding-top: 2%;
+}
+
+#everlastP:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.liu {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-bottom: 1%;
+}
+
+.liu img {
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+
+#sak {
+    width: 45%;
+    padding-right: 0;
+}
+
+.btn-luvas{
+    text-align: center;
+    margin-top: 3%;
+}
+
+#bEver {
+    padding: 12px 45px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #eee;
+    color: #313131;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#bEver:hover {
+   text-decoration: underline;
+}
+
+#everlastPP {
+    color: #d50808;
+    font-size: 22px;
+    padding-top: 4%;
+}
+
+#everlastPP:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#mad {
+    width: 35%;
+    padding-right: 0;
+}
+
+#pret {
+    margin-left: 19%;
+}
+
+#pulser {
+    margin-left: 9%;
+}
+
+#jade {
+    width: 50%;
+    padding-right: 0;
+}
+
+#jadea {
+    width: 50%;
+    padding-right: 0;
+}
+
+#jadi {
+    width: 45%;
+    padding-right: 0;
+}
+
+#mxm {
+    margin-left: 9%;
+}
+
+#loud {
+    width: 45%;
+    padding-right: 0;
+}
+
+#ppgod {
+    color: #d50808;
+    font-size: 22px;
+    padding-top: 2%;
+}
+
+#ppgod:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#listBand ul{
+    padding-left: 13%;
+    padding-bottom: 5%;
+}
+
+#listBand a {
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: bold;
+}
+
+#listBand a:hover {
+    text-decoration: underline;
+}
+
+#nla {
+    font-weight: bold;
+    padding-top: 3%;
+
+}
+
+#outer {
+    margin-top: 5%;
+}
