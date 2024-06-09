@@ -369,13 +369,11 @@ canvas {
 .header-left img{
   padding-top: 10px;
 }
-
   
 .dash-right {
   display: flex;
   width: 70%;
   height: fit-content;
-  background-color: #161618;
   position: relative;
   top: 0;
   left: 25%;
@@ -507,6 +505,11 @@ canvas {
   margin-top: 3%;
 }
 
+#total-tentativas {
+  font-size: 21px; /* Ajuste o tamanho da fonte se necessário */
+  margin-bottom: 3%; /* Espaço entre o h3 e o span */
+}
+
  .estatisticasM {
   text-align: center;
   width: 170px;
@@ -516,4 +519,9 @@ canvas {
   height: 100px;
   margin-left: 11%;
   margin-top: 3%;
+}
+
+#maior-pontuacao {
+  font-size: 21px; /* Ajuste o tamanho da fonte se necessário */
+  margin-bottom: 3%; /* Espaço entre o h3 e o span */
 }

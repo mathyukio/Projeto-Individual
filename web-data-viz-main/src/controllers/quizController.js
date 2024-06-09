@@ -45,35 +45,25 @@ function listarQuiz(req, res) {
         );
 }
 
-function verificarTentativas(req, res) {
-
-    var idUsuario = req.body.idUsuario;
-
-    if (idUsuario == undefined) {
-        res.status(400).send("O id do usuário está indefinido!");
-        return;
-    }
+function buscarQuiz(req, res) {
     
-    quizModel.verificarTentativas(idUsuario)
-        .then(
-            function (resultado) {
-                var tentativas = resultado[0].tentativas || 0;
-                res.json({ tentativas: tentativas });
-            }
-        ).catch(
-            function (erro) {
-                console.log(erro);
-                console.log(
-                    "\nHouve um erro ao verificar as tentativas! Erro: ",
-                    erro.sqlMessage
-                );
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
+    var idUsuario = req.body.idUsuarioServer;
+  
+    quizModel.buscarQuiz(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+  }
 
 module.exports = {
     mensagem,
     listarQuiz,
-    verificarTentativas
+    buscarQuiz
 };

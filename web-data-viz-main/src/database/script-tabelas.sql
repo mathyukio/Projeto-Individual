@@ -15,7 +15,7 @@ CREATE TABLE usuario (
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
-)
+);
 
 CREATE TABLE quiz(
 	idQuiz INT PRIMARY KEY AUTO_INCREMENT,
@@ -23,12 +23,11 @@ CREATE TABLE quiz(
 	acertos INT,
 	erros INT,
 	fkUsuario INT,
-	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario))
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario));
 
-CREATE TABLE aviso (
-	idAviso INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE posts (
+	idPosts INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
 	fk_usuario INT,
-	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
-);
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario));

@@ -22,7 +22,7 @@
 
 </head>
 
-<body onload="validarSessao()">
+<body onload="validarSessao(); exibirTentativas()">
 
   <div class="header-left dash-header">
     <img src="pictures/Logo1.png" alt="" width="120px" height="120px">
@@ -57,11 +57,14 @@
 
   <div class="sectionStats">
     <div class="estatisticasT">
-      <h3>Total de Tentativas</h3>
+      <h3>Total de Tentativas: </h3>
+      <span id="total-tentativas">0</span>
     </div>
     <div class="estatisticasM">
-      <h3>Maior Pontuação</h3>
-    </div>
+      <h3>Maior Pontuação: </h3>
+      <span id="maior-pontuacao">0</span>
+  </div>
+  </div>
   </div>
   <div class="quiz-container">
     <h1> Muay Thai Quiz - Teste seus conhecimentos!</h1>
@@ -149,17 +152,17 @@
   function obterIdUsuario() {
     // Verifica se há um ID de usuário na sessão
     var idUsuario = sessionStorage.getItem('ID_USUARIO');
-    
+
     // Se não houver ID de usuário na sessão, retorna 'desconhecido'
     if (!idUsuario) {
-        console.log("ID do usuário não encontrado na sessão.");
-        return 'desconhecido';
+      console.log("ID do usuário não encontrado na sessão.");
+      return 'desconhecido';
     }
-    
+
     // Se houver ID de usuário na sessão, retorna o valor encontrado
     console.log("ID do usuário encontrado na sessão:", idUsuario);
     return idUsuario;
-}
+  }
 
   function embaralharQuestion() {
     for (var i = questions.length - 1; i > 0; i--) {
@@ -208,33 +211,64 @@
     }, 1000);
   }
 
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   embaralharQuestion();
+  //   showQuestion();
+  // });
+
+  // Função para obter e exibir a maior pontuação
+  function exibirMaiorPontuacao() {
+    var maiorPontuacao = localStorage.getItem('maiorPontuacao') ? parseInt(localStorage.getItem('maiorPontuacao')) : 0;
+    document.getElementById('maior-pontuacao').textContent = maiorPontuacao;
+  }
+
+  // Atualize a função finalizarQuiz
+  function finalizarQuiz() {
+    // Obtém o ID do usuário
+    var idUsuario = obterIdUsuario();
+
+    tentativa++;
+
+    // Incrementa o total de tentativas no localStorage
+    var totalTentativas = localStorage.getItem('totalTentativas') ? parseInt(localStorage.getItem('totalTentativas')) : 0;
+    totalTentativas++;
+    localStorage.setItem('totalTentativas', totalTentativas);
+
+    // Atualiza a maior pontuação no localStorage
+    var maiorPontuacao = localStorage.getItem('maiorPontuacao') ? parseInt(localStorage.getItem('maiorPontuacao')) : 0;
+    if (acertos > maiorPontuacao) {
+      localStorage.setItem('maiorPontuacao', acertos);
+    }
+
+    // Monta os dados do quiz
+    var dadosQuiz = {
+      idUsuarioServer: idUsuario,
+      acertosServer: acertos,
+      errosServer: erros,
+      tentativaServer: tentativa
+    };
+
+    // Envia os dados do quiz para o backend
+    console.log("Enviando dados do quiz para o backend:", dadosQuiz);
+    enviarDados(dadosQuiz);
+
+    // Redireciona para a página de destino
+    console.log("Redirecionando para a página de destino.");
+    window.location.href = 'cards.html';
+  }
+
+  // Atualize a tag body para chamar a função exibirMaiorPontuacao ao carregar a página
   document.addEventListener("DOMContentLoaded", () => {
     embaralharQuestion();
     showQuestion();
+    exibirMaiorPontuacao();
   });
 
-  function finalizarQuiz() {
-        // Obtém o ID do usuário
-        var idUsuario = obterIdUsuario();
-        
-        tentativa++;
-        
-        // Monta os dados do quiz
-        var dadosQuiz = {
-            idUsuario: idUsuario,
-            acertos: acertos,
-            erros: erros,
-            tentativa: tentativa
-        };
-        
-        // Envia os dados do quiz para o backend
-        console.log("Enviando dados do quiz para o backend:", dadosQuiz);
-        enviarDados(dadosQuiz);
 
-        // Redireciona para a página de destino
-        console.log("Redirecionando para a página de destino.");
-        window.location.href = 'cards.html';
-    }
+  function exibirTentativas() {
+    var totalTentativas = localStorage.getItem('totalTentativas') ? parseInt(localStorage.getItem('totalTentativas')) : 0;
+    document.getElementById('total-tentativas').textContent = totalTentativas;
+  }
 
   function limparSessao() {
     sessionStorage.clear();

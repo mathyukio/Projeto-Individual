@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Página Inicial</title>
+    <title>ThaiClub | Edite seu Post</title>
 
     
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -19,8 +19,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), listarInfosDeUm()" style="background-color: #161618;">
-    <!-- <body onload="validarSessao()"> -->
+<body onload="validarSessao(); listarInfosDeUm();">
 
         <div class="header-left dash-header">
             <img src="pictures/Logo1.png" alt="" width="120px" height="120px">
@@ -86,7 +85,7 @@
     }
 
     function editar() {
-        fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+        fetch(`/posts/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
